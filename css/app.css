@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+    --gray-1: hsl(230, 20%, 90%);
+    --gray-2: hsl(230, 20%, 80%);
+    --gray-3: hsl(230, 20%, 70%);
+    --gray-4: hsl(230, 20%, 60%);
+    --gray-5: hsl(230, 20%, 50%);
+    --gray-6: hsl(230, 20%, 40%);
+    --gray-7: hsl(230, 20%, 30%);
+    --gray-8: hsl(230, 20%, 20%);
+    --gray-9: hsl(230, 20%, 10%);
+
+    --orange-1: hsl(15, 83%, 90%);
+    --orange-2: hsl(15, 83%, 80%);
+    --orange-3: hsl(15, 83%, 70%);
+    --orange-4: hsl(15, 83%, 60%);
+    --orange-5: hsl(15, 83%, 50%);
+    --orange-6: hsl(15, 83%, 40%);
+    --orange-7: hsl(15, 83%, 30%);
+    --orange-8: hsl(15, 83%, 20%);
+    --orange-9: hsl(15, 83%, 10%);
+
+    --red-5: hsl(0, 100%, 50%);
+
+    --size-1: 4px;
+    --size-2: 8px;
+    --size-3: 12px;
+    --size-4: 16px;
+    --size-5: 20px;
+    --size-6: 24px;
+    --size-7: 28px;
+    --size-8: 32px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding: var(--size-6);
+    display: flex;
+}
+
+.calendar {
+    background-color: white;
+    width: 100%;
+    border-radius: var(--size-4);
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.calendar__header {
+    background-color: var(--orange-4);
+    color: white;
+    border-radius: var(--size-4) var(--size-4) 0px 0px;
+    display: flex;
+    padding: var(--size-6);
+}
+
+.calendar__header__title {
+    flex: 1;
+    text-align: center;
+}
+
+.calendar__body {
+    flex: 1;
+    border-radius: 0px 0px var(--size-4) var(--size-4);
+    overflow-y: auto;
+}
+
+.calendar__body__days {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--gray-1);
+}
+
+.calendar__body__days__day {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    color: var(--gray-8);
+    padding: var(--size-3) 0px;
+    border-top: 5px solid transparent;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.calendar__body__days__day:hover {
+    background-color: var(--orange-1);
+    border-top: 5px solid var(--orange-5) !important;
+}
+
+.calendar__body__days__day--selected {
+    color: var(--orange-5) !important;
+    border-top: 5px solid var(--orange-4) !important;
+}
+
+.calendar__body__days__day__name {
+    font-size: var(--size-3);
+}
+
+.activities__activity {
+    padding: var(--size-8);
+    border-bottom: 2px solid var(--gray-1);
+    border-left: 3px solid var(--gray-5);
+    transition: 0.25s;
+}
+
+.activities__activity:hover {
+    background-color: var(--gray-1);
+    cursor: pointer;
+}
+
+.activities__activity__title {
+    font-weight: bold;
+}
+
+.activities__activity__subtitle {
+    color: var(--gray-5);
+    font-size: var(--size-3);
+}
+
+.activities__activity__description {
+    color: var(--gray-8);
+    padding: var(--size-4) 0px;
+}
+
+.activities__activity__alert {
+    font-weight: bold;
+    color: var(--gray-8);
+}
+
+.activities__activity__alert--danger i {
+    color: var(--red-5);
+}
